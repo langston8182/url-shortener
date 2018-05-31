@@ -1,0 +1,1 @@
+insert into url_shortener(id, url) values(1000000, 'http://www.google.fr');
