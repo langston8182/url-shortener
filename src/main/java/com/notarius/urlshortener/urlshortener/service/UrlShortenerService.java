@@ -16,10 +16,10 @@ public interface UrlShortenerService {
 	/**
 	 * Retrieve the true Url according the shorten Url.
 	 * 
-	 * @param url The true Url.
+	 * @param url The shorten Url.
 	 * @return The Url.
 	 */
-	public UrlShortener getShortUrl(String url);
+	public UrlShortener getUrl(String shortenUrl);
 	
 	/**
 	 * 

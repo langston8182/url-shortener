@@ -1,5 +1,8 @@
 package com.notarius.urlshortener.urlshortener.service.impl;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -10,6 +13,7 @@ import org.springframework.util.Assert;
 
 import com.notarius.urlshortener.urlshortener.component.Base62;
 import com.notarius.urlshortener.urlshortener.domain.UrlShortener;
+import com.notarius.urlshortener.urlshortener.exception.UrlShortenerException;
 import com.notarius.urlshortener.urlshortener.exception.UrlShortenerNotFoundException;
 import com.notarius.urlshortener.urlshortener.repository.UrlShortenerRepository;
 import com.notarius.urlshortener.urlshortener.service.UrlShortenerService;
@@ -38,8 +42,9 @@ public class UrlShortenerServiceImpl implements UrlShortenerService {
 	}
 
 	@Override
-	public UrlShortener getShortUrl(String url) {
-		return null;
+	public UrlShortener getUrl(String shortenUrl) {
+		long bas10 = base62.toBase10(shortenUrl);
+		return findUrlShortener(bas10);
 	}
 
 	@Override
@@ -54,5 +59,4 @@ public class UrlShortenerServiceImpl implements UrlShortenerService {
 		
 		return urlShortener.get();
 	}
-
 }
