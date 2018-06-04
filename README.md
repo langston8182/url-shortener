@@ -1,7 +1,11 @@
 # Objectif
 
 URL shortener est une application web permettant de raccourcir une URL. L'agorithme de racourcissement utilise un encodage 62 bits comprenant l'ensemble des caractères a-zA-Z0-9.
+
+# Sécurité
+Authentification (user / mot de passe) nécéssaire pour accéder à l'application. Le mot de passe est sauvegardé en base de données en utilisant l'encodeur BCrypt qui a le gros avantage d'être différent à chaque appel.
 Pour des raisons d'attaque de base de données, les URL raccourcies ne sont pas sauvegardés dans la base de donnée.
+Pour les besoins du projet, l'authentification par défaut de spring security est utilisé.
 
 # Technique
 
@@ -11,6 +15,7 @@ Spring boot est mise en avant dans ce projet.
 3. Thymeleaf pour la partie vue, permet d'accéder facilement au controleur.
 4. Bootstrap pour le CSS.
 5. Lombok : utile pour éviter d'écrire les getters / setters dans les classes entités. Necéssite de lancer le jar lombok pour permettre à Eclipse de compiler.
+6. JUnit pour les tests unitaires.
 
 # Installation
 
