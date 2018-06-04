@@ -6,6 +6,7 @@ URL shortener est une application web permettant de raccourcir une URL. L'agorit
 Authentification (user / mot de passe) nécéssaire pour accéder à l'application. Le mot de passe est sauvegardé en base de données en utilisant l'encodeur BCrypt qui a le gros avantage d'être différent à chaque appel.
 Pour des raisons d'attaque de base de données, les URL raccourcies ne sont pas sauvegardés dans la base de donnée.
 Pour les besoins du projet, l'authentification par défaut de spring security est utilisé.
+Une authorisation est necéssaire pour accéder à l'URL `http://localhost:8080/url/encode`. Seul un utilisateur avec le role "ADMIN" peux y accéder.
 
 # Technique
 
