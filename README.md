@@ -20,6 +20,7 @@ Spring boot est mise en avant dans ce projet.
 4. Bootstrap pour le CSS.
 5. Lombok : utile pour éviter d'écrire les getters / setters dans les classes entités. Necéssite de lancer le jar lombok pour permettre à Eclipse de compiler.
 6. JUnit pour les tests unitaires.
+7. Base de données H2 in Memory. Les données sont réinitialisées à chaque redemarrage de l'application.
 
 # Installation
 
