@@ -35,6 +35,8 @@ Authentification necéssaire pour utiliser la fonction de racourcissement.
 
 Fonctionne sous tous les navigateurs récents tels Google chrome, IE, Firefox.
 
+Bien entendu, même si l'application permet de raccourcir n'importe quelle URL, seules les URLs dont le domaine correspond au serveur sur lequel est déployé l'application fonctionneront.
+
 # Contributeur
 
 Cyril Marchive - 2018
