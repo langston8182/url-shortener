@@ -9,10 +9,10 @@ public class UtilsTest {
 
 	@Test
 	public void getDomainSuccess() {
-		String url = "http://www.google.fr/test/a";
+		String url = "http://localhost:8080/url/encode";
 		String expectedDomain = Utils.getDomain(url);
-		
-		assertThat(expectedDomain).isEqualTo("www.google.fr");
+		System.out.println(expectedDomain);
+		assertThat(expectedDomain).isEqualTo("http://localhost:8080/");
 	}
 	
 	@Test(expected = UrlShortenerException.class)

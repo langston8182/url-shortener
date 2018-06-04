@@ -1,7 +1,7 @@
 package com.notarius.urlshortener.urlshortener.util;
 
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import com.notarius.urlshortener.urlshortener.exception.UrlShortenerException;
 
@@ -20,18 +20,14 @@ public class Utils {
 	 * @Return the Url domain.
 	 */
 	public static String getDomain(String url) {;
-		URI uri;
+		URL aUrl;
 		try {
-			uri = new URI(url);
-		} catch (URISyntaxException e) {
-			throw new UrlShortenerException("Usage : " + url + " is not a valid Url");
+			aUrl = new URL(url);
+		} catch (MalformedURLException e) {
+			throw new UrlShortenerException("malformed URL");
 		}
 		
-		if (uri.getHost() == null) {
-			throw new UrlShortenerException("Usage : " + url + " no Uri present");
-		}
-		
-		return uri.getHost();
+		return aUrl.getProtocol() + "://" + aUrl.getAuthority() + "/";
 	}
 	
 }

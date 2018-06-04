@@ -22,7 +22,7 @@ public class UrlShortener {
 	 */
 	@Id
 	@GeneratedValue(generator = "seq")
-	@SequenceGenerator(name = "seq", initialValue = 1000000)
+	@SequenceGenerator(name = "seq", initialValue = 1000001)
 	private Long Id;
 	
 	/**

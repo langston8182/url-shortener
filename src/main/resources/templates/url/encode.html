@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	layout:decorator="layout/main">
+<head>
+<meta charset="ISO-8859-1" />
+<title th:text="#{url.encode.titre}">Encode URL</title>
+</head>
+<body>
+
+	<div layout:fragment="content">
+		
+		<form th:action="@{/url/encode}" th:object="${urlShortener}" method="post">
+			<div class="form-group">
+				<label for="url" th:text="#{url.encode.url}">URL : </label>
+				<input type="text" class="form-control" id="url" th:field="*{url}" placeholder="ex : http://localhost:8080/url/encode"/>
+			</div>
+			<button type="submit" class="btn btn-info" th:text="#{url.encode.valider}">Valider</button>
+		</form>
+		<br />
+		<p th:if="${urlShortener.urlShort}"><span th:text="#{url.encode.success}">URL encodée avec succès</span> : <span th:text="${urlShortener.urlShort}"></span></p>
+		
+	</div>
+
+</body>
+</html>
